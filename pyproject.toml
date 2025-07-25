@@ -1,0 +1,10 @@
+[project]
+name = "duplicates_nft_contract"
+version = "0.1.0"
+description = "Duplicates NFT smart contract - Create duplicates of any ERC721 NFT"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "moccasin>=0.4.2",
+    "snekmate>=0.1.2",
+]

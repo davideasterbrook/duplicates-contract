@@ -1,0 +1,46 @@
+[project]
+src = "src"
+out = "out"
+dot_env = ".env"
+save_abi_path = "abis"
+
+[networks.contracts]
+bayc = {abi = "abis/bayc.json"}
+ppg = {abi = "abis/ppg.json"}
+doodle = {abi = "abis/doodle.json"}
+autoglyphs = {abi = "abis/autoglyphs.json"}
+moonbirds = {abi = "abis/moonbirds.json"}
+duplicates = {deployer_script = "script/deploy_duplicates.py", abi = "abis/duplicates.json"}
+
+[networks.contracts.mock_erc721]
+deployer_script = "script/mocks/deploy_mock_erc721.py"
+
+[networks.pyevm]
+is_zksync = false
+
+[networks.anvil]
+url = "http://127.0.0.1:8545"
+prompt_live = false
+save_to_db = false
+chain_id = 31337
+
+[networks.anvil-mainnet-fork]
+# $ anvil --fork-url $MAINNET_RPC_URL --chain-id 31337
+url = "http://127.0.0.1:8545"
+default_account_name="contract_deployer"
+prompt_live = false
+save_to_db = false
+chain_id = 31337
+extra_data = { owner_address = "0x40A34D87eb243C0811e0FF0c42350152fe2d1198" }
+
+[networks.anvil-mainnet-fork.contracts]
+duplicates = { address = "0xbC67A8B75bb8b1Eb1a3756DDb0954b7f031A5Cab" }
+bayc = { address = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" }
+ppg = { address = "0xBd3531dA5CF5857e7CfAA92426877b022e612cf8" }
+doodle = { address = "0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e" }
+autoglyphs = { address = "0xd4e4078ca3495DE5B1d4dB434BEbc5a986197782" }
+moonbirds = { address = "0x23581767a106ae21c074b2276D25e5C3e136a68b" }
+
+[extra_data]
+owner_address = "0x906C77433cABe0464A292BDBe046565D6B005e89"
+deployer_address = "0xAC79407075Fd457648898Dc2d705c481cF6D59ea"
