@@ -16,12 +16,12 @@ def get_owner_address() -> str:
     return owner_address
 
 
-def moccasin_main() -> VyperContract:
-    duplicates_contract: VyperContract = deploy_duplicates()
+def get_contract(contract_name: str) -> VyperContract:
+    return active_network.manifest_named(contract_name)
 
-    print("#" * 80)
-    print(f"Duplicates Contract deployed at: {duplicates_contract.address}")
-    print("#" * 80)
+
+def moccasin_main() -> VyperContract:
+    duplicates_contract: VyperContract = get_contract("duplicates")
 
     owner_address = get_owner_address()
     print(f"Transferring ownership to {owner_address}")

@@ -28,7 +28,7 @@ def moccasin_main() -> VyperContract:
     # Anvil 2: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
 
     with boa.env.prank("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"):
-        for i in range(20):
+        for i in range(20, 40):
             mint(duplicates_contract, get_contract("bayc"), i)
             mint(duplicates_contract, get_contract("doodle"), i)
             mint(duplicates_contract, get_contract("ppg"), i)

@@ -1,5 +1,9 @@
 # pragma version 0.4.3
 
+# ------------------------------------------------------------------
+# Duplicating is the greatest form of flattery.
+# ------------------------------------------------------------------
+
 from snekmate.tokens import erc721
 from snekmate.auth import ownable as ow
 from snekmate.tokens.interfaces import IERC721Metadata
